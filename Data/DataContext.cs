@@ -16,7 +16,7 @@ namespace dotnet_test.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite("Server=.\\SQLEXPRESS;Database=sql_server_dotnet_test;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=sql_server_dotnet_test;User Id=sa;Password=reallyStrongPwd123;TrustServerCertificate=True;");
         }
 
         public DbSet<dotnet_test.Models.Category> Category { get; set; }
