@@ -2,58 +2,57 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dotnet_test.Data;
 using dotnet_test.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_test.Services.ProductsService
 {
     public class ProductsService : IProductService
     {
-        public static List<Product> products = new()
-        {
-            new Product() { Id = 1, Nome = "Produto 1", Preco = 10.00M },
-            new Product() { Id = 2, Nome = "Produto 2", Preco = 20.00M },
-            new Product() { Id = 3, Nome = "Produto 3", Preco = 30.00M },
-            new Product() { Id = 4, Nome = "Produto 4", Preco = 40.00M },
-            new Product() { Id = 5, Nome = "Produto 5", Preco = 50.00M },
-            new Product() { Id = 6, Nome = "Produto 6", Preco = 60.00M },
-            new Product() { Id = 7, Nome = "Produto 7", Preco = 70.00M },
-            new Product() { Id = 8, Nome = "Produto 8", Preco = 80.00M },
-            new Product() { Id = 9, Nome = "Produto 9", Preco = 90.00M },
-            new Product() { Id = 10, Nome = "Produto 10", Preco = 100.00M },
-        };
 
-        public List<Product> AddProduct(Product product)
+    private readonly DataContext dataContext;
+
+    public ProductsService(DataContext dataContext)
+    {
+        this.dataContext = dataContext;
+    }
+
+        public async Task<List<Product>> AddProduct(Product product)
         {
-            products.Add(product);
-            return products;
+            dataContext.Product.Add(product);
+            await dataContext.SaveChangesAsync();
+            return await dataContext.Product.ToListAsync();
         }
 
-        public List<Product>? DeleteProduct(int id)
+        public async Task<List<Product>> DeleteProduct(int id)
         {
-            var productDelete = products.Find(product => product.Id == id);
+            var productDelete = await dataContext.Product.FindAsync(id);
             if (productDelete == null)
             {
                 return null;
             }
 
-            products.Remove(productDelete);
-            return products;
+            dataContext.Product.Remove(productDelete);
+            await dataContext.SaveChangesAsync();
+
+            return await dataContext.Product.ToListAsync();
         }
 
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProducts()
         {
-            return products;
+            return await dataContext.Product.ToListAsync();
         }
 
-        public Product? GetProduct(int id)
+        public async Task<Product> GetProduct(int id)
         {
-            var productGet = products.Find(product => product.Id == id);
+            var productGet = await dataContext.Product.FindAsync(id);
             return productGet == null ? null : productGet;
         }
 
-    public List<Product>? UpdateProduct(int id, Product product)
+    public async Task<List<Product>> UpdateProduct(int id, Product product)
         {
-            var productUpdate = products.Find(product => product.Id == id);
+            var productUpdate = await dataContext.Product.FindAsync(id);
             if (productUpdate == null)
             {
                 return null;
@@ -62,7 +61,9 @@ namespace dotnet_test.Services.ProductsService
             productUpdate.Nome = product.Nome;
             productUpdate.Preco = product.Preco;
 
-            return products;
+            await dataContext.SaveChangesAsync();
+
+            return await dataContext.Product.ToListAsync();
         }
     }
 }

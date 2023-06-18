@@ -21,13 +21,13 @@ namespace dotnet_test.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            return productService.GetAllProducts();
+            return await productService.GetAllProducts();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var result = productService.GetProduct(id);
+            var result = await productService.GetProduct(id);
             if (result == null)
             {
                 return NotFound("Produto não encontrado");
@@ -38,14 +38,13 @@ namespace dotnet_test.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Product>>> AddProduct(Product product)
         {
-            var result = productService.AddProduct(product);
-            return Ok(result);
+            return await productService.AddProduct(product);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<List<Product>>> UpdateProduct(int id, Product product)
         {
-            var result = productService.UpdateProduct(id, product);
+            var result = await productService.UpdateProduct(id, product);
             if (result == null)
             {
                 return NotFound("Produto não encontrado");
@@ -57,7 +56,7 @@ namespace dotnet_test.Controllers
 
         public async Task<ActionResult<List<Product>>> DeleteProduct(int id)
         {
-            var result = productService.DeleteProduct(id);
+            var result = await productService.DeleteProduct(id);
             if (result == null)
             {
                 return NotFound("Produto não encontrado");

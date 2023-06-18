@@ -8,10 +8,10 @@ namespace dotnet_test.Services.ProductsService
 {
     public interface IProductService
     {
-        List<Product> GetAllProducts();
-        Product? GetProduct(int id);
-        List<Product> AddProduct(Product product);
-        List<Product>? UpdateProduct(int id, Product product);
-        List<Product>? DeleteProduct(int id);
+        Task<List<Product>> GetAllProducts();
+        Task<Product> GetProduct(int id);
+        Task<List<Product>> AddProduct(Product product);
+        Task<List<Product>> UpdateProduct(int id, Product product);
+        Task<List<Product>> DeleteProduct(int id);
     }
 }
