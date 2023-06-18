@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dotnet_test.Models;
+using dotnet_test.Services.ProductsService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_test.Controllers
@@ -11,72 +12,57 @@ namespace dotnet_test.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        public static List<Product> products = new()
+        private readonly IProductService productService;
+        public ProductsController(IProductService productService)
         {
-            new Product() { Id = 1, Nome = "Produto 1", Preco = 10.00M },
-            new Product() { Id = 2, Nome = "Produto 2", Preco = 20.00M },
-            new Product() { Id = 3, Nome = "Produto 3", Preco = 30.00M },
-            new Product() { Id = 4, Nome = "Produto 4", Preco = 40.00M },
-            new Product() { Id = 5, Nome = "Produto 5", Preco = 50.00M },
-            new Product() { Id = 6, Nome = "Produto 6", Preco = 60.00M },
-            new Product() { Id = 7, Nome = "Produto 7", Preco = 70.00M },
-            new Product() { Id = 8, Nome = "Produto 8", Preco = 80.00M },
-            new Product() { Id = 9, Nome = "Produto 9", Preco = 90.00M },
-            new Product() { Id = 10, Nome = "Produto 10", Preco = 100.00M },
-        };
+            this.productService = productService;
+        }
 
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            return Ok(products);
+            return productService.GetAllProducts();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var product = products.Find(product => product.Id == id);
-            if (product == null)
+            var result = productService.GetProduct(id);
+            if (result == null)
             {
                 return NotFound("Produto não encontrado");
             }
-            return Ok(product);
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<ActionResult<List<Product>>> AddProduct(Product product)
         {
-            products.Add(product);
-            return Ok(products);
+            var result = productService.AddProduct(product);
+            return Ok(result);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<List<Product>>> UpdateProduct(int id, Product product)
         {
-            var productUpdate = products.Find(product => product.Id == id);
-            if (productUpdate == null)
+            var result = productService.UpdateProduct(id, product);
+            if (result == null)
             {
                 return NotFound("Produto não encontrado");
             }
-
-            productUpdate.Nome = product.Nome;
-            productUpdate.Preco = product.Preco;
-
-            return Ok(products);
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
 
         public async Task<ActionResult<List<Product>>> DeleteProduct(int id)
         {
-            var productDelete = products.Find(product => product.Id == id);
-            if (productDelete == null)
+            var result = productService.DeleteProduct(id);
+            if (result == null)
             {
                 return NotFound("Produto não encontrado");
             }
-
-            products.Remove(productDelete);
-
-            return Ok(products);
+            return Ok(result);
         }
     }
 }
