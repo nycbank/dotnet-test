@@ -1,5 +1,6 @@
 using dotnet_test.Services.ProductsService;
 using dotnet_test.Services.CategoriesService;
+using dotnet_test.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductService, ProductsService>();
 builder.Services.AddScoped<ICategoryService, CategoriesService>();
+builder.Services.AddDbContext<DataContext>();
 
 var app = builder.Build();
 
