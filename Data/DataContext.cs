@@ -11,7 +11,8 @@ namespace dotnet_test.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
+            Category = Set<Category>();
+            Product = Set<Product>();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

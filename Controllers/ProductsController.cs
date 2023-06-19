@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using dotnet_test.Models;
 using dotnet_test.Services.ProductsService;
 using Microsoft.AspNetCore.Mvc;
+using dotnet_test.Errors;
 
 namespace dotnet_test.Controllers
 {
@@ -21,47 +22,72 @@ namespace dotnet_test.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            return await productService.GetAllProducts();
+            try
+            {
+                var result = await productService.GetAllProducts();
+                return Ok(result);
+            }
+            catch (NotFoundException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var result = await productService.GetProduct(id);
-            if (result == null)
+            try
             {
-                return NotFound("Produto não encontrado");
+                var result = await productService.GetProduct(id);
+                return Ok(result);
             }
-            return Ok(result);
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpPost]
         public async Task<ActionResult<List<Product>>> AddProduct(Product product)
         {
-            return await productService.AddProduct(product);
+            try
+            {
+                var result = await productService.AddProduct(product);
+                return Ok(result);
+            }
+            catch (NotFoundException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<List<Product>>> UpdateProduct(int id, Product product)
         {
-            var result = await productService.UpdateProduct(id, product);
-            if (result == null)
+            try
             {
-                return NotFound("Produto não encontrado");
+                var result = await productService.UpdateProduct(id, product);
+                return Ok(result);
             }
-            return Ok(result);
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpDelete("{id}")]
 
         public async Task<ActionResult<List<Product>>> DeleteProduct(int id)
         {
-            var result = await productService.DeleteProduct(id);
-            if (result == null)
+            try
             {
-                return NotFound("Produto não encontrado");
+                var result = await productService.DeleteProduct(id);
+                return Ok(result);
             }
-            return Ok(result);
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 }

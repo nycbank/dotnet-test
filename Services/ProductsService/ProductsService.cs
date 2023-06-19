@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using dotnet_test.Data;
 using dotnet_test.Models;
 using Microsoft.EntityFrameworkCore;
+using dotnet_test.Errors;
 
 namespace dotnet_test.Services.ProductsService
 {
@@ -27,11 +28,7 @@ namespace dotnet_test.Services.ProductsService
 
         public async Task<List<Product>> DeleteProduct(int id)
         {
-            var productDelete = await dataContext.Product.FindAsync(id);
-            if (productDelete == null)
-            {
-                return null;
-            }
+            var productDelete = await dataContext.Product.FindAsync(id) ?? throw new NotFoundException("Produto não encontrado");
 
             dataContext.Product.Remove(productDelete);
             await dataContext.SaveChangesAsync();
@@ -41,22 +38,17 @@ namespace dotnet_test.Services.ProductsService
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return await dataContext.Product.ToListAsync();
+            return await dataContext.Product.ToListAsync() ?? throw new NotFoundException("Não há produtos cadastrados");
         }
 
         public async Task<Product> GetProduct(int id)
         {
-            var productGet = await dataContext.Product.FindAsync(id);
-            return productGet == null ? null : productGet;
+            return await dataContext.Product.FindAsync(id) ?? throw new NotFoundException("Produto não encontrado");
         }
 
     public async Task<List<Product>> UpdateProduct(int id, Product product)
         {
-            var productUpdate = await dataContext.Product.FindAsync(id);
-            if (productUpdate == null)
-            {
-                return null;
-            }
+            var productUpdate = await dataContext.Product.FindAsync(id) ?? throw new NotFoundException("Produto não encontrado");
 
             productUpdate.Nome = product.Nome;
             productUpdate.Preco = product.Preco;
