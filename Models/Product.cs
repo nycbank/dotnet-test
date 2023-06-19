@@ -10,5 +10,8 @@ namespace dotnet_test.Models
         public int Id { get; set; }
         public string Nome { get; set; }  = string.Empty;
         public decimal Preco { get; set; }
+
+        public List <Category> Categories { get; set; } = new List<Category>();
+        public int CategoryId { get; set; }
     }
 }

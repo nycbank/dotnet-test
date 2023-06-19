@@ -9,5 +9,7 @@ namespace dotnet_test.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }  = string.Empty;
+
+        public List<Product> Products { get; set; } = new List<Product>();
     }
 }
