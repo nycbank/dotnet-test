@@ -2,65 +2,58 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dotnet_test.Data;
 using dotnet_test.Models;
+using Microsoft.EntityFrameworkCore;
+using dotnet_test.Errors;
 
 namespace dotnet_test.Services.CategoriesService
 {
     public class CategoriesService : ICategoryService
     {
-        public static List<Category> categories = new()
-        {
-            new Category() { Id = 1, Nome = "Categoria 1" },
-            new Category() { Id = 2, Nome = "Categoria 2" },
-            new Category() { Id = 3, Nome = "Categoria 3" },
-            new Category() { Id = 4, Nome = "Categoria 4" },
-            new Category() { Id = 5, Nome = "Categoria 5" },
-            new Category() { Id = 6, Nome = "Categoria 6" },
-            new Category() { Id = 7, Nome = "Categoria 7" },
-            new Category() { Id = 8, Nome = "Categoria 8" },
-            new Category() { Id = 9, Nome = "Categoria 9" },
-            new Category() { Id = 10, Nome = "Categoria 10" },
-        };
+        private readonly DataContext dataContext;
 
-        public List<Category> AddCategory(Category category)
+        public CategoriesService(DataContext dataContext)
         {
-            categories.Add(category);
-            return categories;
+            this.dataContext = dataContext;
         }
 
-        public List<Category>? DeleteCategory(int id)
+        public async Task<List<Category>> AddCategory(Category category)
         {
-            var categoryDelete = categories.Find(category => category.Id == id);
-            if (categoryDelete == null)
-            {
-                return null;
-            }
-
-            categories.Remove(categoryDelete);
-            return categories;
+            dataContext.Category.Add(category);
+            await dataContext.SaveChangesAsync();
+            return await dataContext.Category.ToListAsync();
         }
 
-        public List<Category> GetAllCategories()
+        public async Task<List<Category>> DeleteCategory(int id)
         {
-            return categories;
+            var categoryDelete = await dataContext.Category.FindAsync(id) ?? throw new NotFoundException("Categoria não encontrada");
+
+            dataContext.Category.Remove(categoryDelete);
+            await dataContext.SaveChangesAsync();
+
+            return await dataContext.Category.ToListAsync();
         }
 
-        public Category? GetCategory(int id)
+        public async Task<List<Category>> GetAllCategories()
         {
-            var categoryGet = categories.Find(category => category.Id == id);
-            return categoryGet == null ? null : categoryGet;
+            return await dataContext.Category.ToListAsync() ?? throw new NotFoundException("Não há categorias cadastradas");
         }
 
-    public List<Category>? UpdateCategory(int id, Category category)
+        public async Task<Category> GetCategory(int id)
         {
-            var categoryUpdate = categories.Find(category => category.Id == id);
-            if (categoryUpdate == null)
-            {
-                return null;
-            }
+            return await dataContext.Category.FindAsync(id) ?? throw new NotFoundException("Categoria não encontrada");
+        }
+
+    public async Task<List<Category>> UpdateCategory(int id, Category category)
+        {
+            var categoryUpdate = dataContext.Category.Find(id) ?? throw new NotFoundException("Categoria não encontrada");
 
             categoryUpdate.Nome = category.Nome;
-            return categories;
+
+            await dataContext.SaveChangesAsync();
+
+            return await dataContext.Category.ToListAsync();
         }
     }
 }

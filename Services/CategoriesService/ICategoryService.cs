@@ -8,10 +8,10 @@ namespace dotnet_test.Services.CategoriesService
 {
     public interface ICategoryService
     {
-        List<Category> GetAllCategories();
-        Category? GetCategory(int id);
-        List<Category> AddCategory(Category category);
-        List<Category>? UpdateCategory(int id, Category category);
-        List<Category>? DeleteCategory(int id);
+        Task<List<Category>> GetAllCategories();
+        Task<Category> GetCategory(int id);
+        Task<List<Category>> AddCategory(Category category);
+        Task<List<Category>> UpdateCategory(int id, Category category);
+        Task<List<Category>> DeleteCategory(int id);
     }
 }
