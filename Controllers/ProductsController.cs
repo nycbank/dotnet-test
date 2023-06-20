@@ -48,11 +48,11 @@ namespace dotnet_test.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<Product>>> AddProduct(Product product)
+        public async Task<ActionResult<List<Product>>> AddProduct(Product product, string categoryName)
         {
             try
             {
-                var result = await productService.AddProduct(product);
+                var result = await productService.AddProduct(product, categoryName);
                 return Ok(result);
             }
             catch (NotFoundException ex)

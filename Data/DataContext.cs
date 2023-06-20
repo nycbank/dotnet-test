@@ -27,11 +27,16 @@ namespace dotnet_test.Data
                 .Property(p => p.Preco)
                 .HasColumnType("decimal(18, 2)");
 
+            modelBuilder.Entity<Category>()
+                .HasMany(c => c.Products)
+                .WithMany(p => p.Categories)
+                .UsingEntity(j => j.ToTable("CategoryProduct"));
+
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<dotnet_test.Models.Category> Category { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
 
-        public DbSet<dotnet_test.Models.Product> Product { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
     }
 }

@@ -19,13 +19,27 @@ namespace dotnet_test.Services.ProductsService
         this.dataContext = dataContext;
     }
 
-        public async Task<List<Product>> AddProduct(Product product)
+        public async Task<List<Product>> AddProduct(Product product, string categoryName)
         {
-            dataContext.Product.Add(product);
-            await dataContext.SaveChangesAsync();
-            return await dataContext.Product.ToListAsync();
-        }
+            var category = await dataContext.Category.FirstOrDefaultAsync(c => c.Nome == categoryName);
 
+            if (category != null)
+            {
+                product.Categories.Add(category);
+            }
+            else
+            {
+                category = new Category { Nome = categoryName };
+                product.Categories.Add(category);
+                dataContext.Category.Add(category);
+                await dataContext.SaveChangesAsync();
+            }
+
+            await dataContext.Product.AddAsync(product);
+            await dataContext.SaveChangesAsync();
+
+            return await dataContext.Product.Include(c => c.Categories).ToListAsync();
+        }
         public async Task<List<Product>> DeleteProduct(int id)
         {
             var productDelete = await dataContext.Product.FindAsync(id) ?? throw new NotFoundException("Produto não encontrado");
@@ -38,7 +52,7 @@ namespace dotnet_test.Services.ProductsService
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return await dataContext.Product.ToListAsync() ?? throw new NotFoundException("Não há produtos cadastrados");
+            return await dataContext.Product.Include(c => c.Categories).ToListAsync() ?? throw new NotFoundException("Não há produtos cadastrados");
         }
 
         public async Task<Product> GetProduct(int id)
