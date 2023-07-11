@@ -36,6 +36,17 @@ public class ProdutoService
 
         return null;
     }
-    
-     
+
+
+    public ReadProdutoDto GetProdutoById(int id)
+    {
+        Produtos produtos = _context.Produtos.FirstOrDefault(p => p.id == id);
+        if (produtos != null)
+        {
+            ReadProdutoDto result = _mapper.Map<ReadProdutoDto>(produtos);
+            return result;
+        }
+
+        return null;
+    }
 }

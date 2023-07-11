@@ -1,6 +1,7 @@
 using AutoMapper;
 using dotnet_test.Data;
 using dotnet_test.Data.Dtos.CategoriaDto;
+using dotnet_test.Data.Dtos.ProdutoDto;
 using dotnet_test.Models;
 
 namespace dotnet_test.Services;
@@ -32,6 +33,18 @@ public class CategoriaService
         {
             List<ReadCategoriaDto> readCategoriaDtos = _mapper.Map<List<ReadCategoriaDto>>(categoriasList);
             return readCategoriaDtos;
+        }
+
+        return null;
+    }
+
+    public ReadCategoriaDto GetCategoriaById(int id)
+    {
+        Categorias categorias = _context.Categorias.FirstOrDefault(p => p.id == id);
+        if (categorias != null)
+        {
+            ReadCategoriaDto result = _mapper.Map<ReadCategoriaDto>(categorias);
+            return result;
         }
 
         return null;
