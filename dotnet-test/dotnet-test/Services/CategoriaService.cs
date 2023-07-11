@@ -1,0 +1,39 @@
+using AutoMapper;
+using dotnet_test.Data;
+using dotnet_test.Data.Dtos.CategoriaDto;
+using dotnet_test.Models;
+
+namespace dotnet_test.Services;
+
+public class CategoriaService
+{
+    private readonly AppDbContext _context;
+    private readonly IMapper _mapper;
+
+    public CategoriaService(AppDbContext context, IMapper mapper)
+    {
+        _context = context;
+        _mapper = mapper;
+    }
+
+    public ReadCategoriaDto PostCategoria(CreateCategoriaDto categoriaDto)
+    {
+        Categorias categorias = _mapper.Map<Categorias>(categoriaDto);
+        _context.Categorias.Add(categorias);
+        _context.SaveChanges();
+        return _mapper.Map<ReadCategoriaDto>(categorias);
+    }
+
+    public List<ReadCategoriaDto> GetCategorias()
+    {
+        List<Categorias> categoriasList;
+        categoriasList = _context.Categorias.ToList();
+        if (categoriasList != null)
+        {
+            List<ReadCategoriaDto> readCategoriaDtos = _mapper.Map<List<ReadCategoriaDto>>(categoriasList);
+            return readCategoriaDtos;
+        }
+
+        return null;
+    }
+}
