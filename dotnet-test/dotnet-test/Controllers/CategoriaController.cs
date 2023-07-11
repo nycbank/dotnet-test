@@ -1,5 +1,6 @@
 using dotnet_test.Data.Dtos.CategoriaDto;
 using dotnet_test.Services;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_test.Controllers;
@@ -38,5 +39,23 @@ public class CategoriaController : ControllerBase
         if (readCategoriaDtos != null)
             return Ok(readCategoriaDtos);
         return NotFound();
+    }
+    
+    [HttpPut]
+    public IActionResult UpdateProduto(UpdateCategoriaDto categoriaDto)
+    {
+        Result result = _categoriaService.UpdateCategoria(categoriaDto);
+        if (result.IsFailed)
+            return NotFound();
+        return NoContent();
+    }
+    
+    [HttpDelete("{id}")]
+    public IActionResult DeleteTeam(int id)
+    {
+        Result result = _categoriaService.DeleteCategoria(id);
+        if (result.IsFailed)
+            return NotFound();
+        return NoContent();
     }
 }

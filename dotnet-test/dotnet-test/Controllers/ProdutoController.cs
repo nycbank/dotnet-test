@@ -1,5 +1,6 @@
 using dotnet_test.Data.Dtos.ProdutoDto;
 using dotnet_test.Services;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_test.Controllers;
@@ -38,6 +39,24 @@ public class ProdutoController : ControllerBase
         if (readProdutoDtos != null)
             return Ok(readProdutoDtos);
         return NotFound();
+    }
+
+    [HttpPut]
+    public IActionResult UpdateProduto(UpdateProdutoDto produtoDto)
+    {
+        Result result = _produtoService.UpdateProduto(produtoDto);
+        if (result.IsFailed)
+            return NotFound();
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteTeam(int id)
+    {
+        Result result = _produtoService.DeleteProduto(id);
+        if (result.IsFailed)
+            return NotFound();
+        return NoContent();
     }
     
 }

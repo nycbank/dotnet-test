@@ -1,7 +1,9 @@
 using AutoMapper;
 using dotnet_test.Data;
+using dotnet_test.Data.Dtos.CategoriaDto;
 using dotnet_test.Data.Dtos.ProdutoDto;
 using dotnet_test.Models;
+using FluentResults;
 
 namespace dotnet_test.Services;
 
@@ -48,5 +50,28 @@ public class ProdutoService
         }
 
         return null;
+    }
+
+    public Result UpdateProduto(UpdateProdutoDto produtoDto)
+    {
+        Produtos produtos = _context.Produtos.FirstOrDefault(p => p.id == produtoDto.id);
+        if (produtos == null)
+        {
+            return Result.Fail("Not Found");
+        }
+
+        _mapper.Map(produtoDto, produtos);
+        _context.SaveChanges();
+        return Result.Ok();
+    }
+
+    public Result DeleteProduto(int id)
+    {
+        Produtos produtos = _context.Produtos.FirstOrDefault(p => p.id == id);
+        if(produtos == null)
+            return Result.Fail("Not Found");
+        _context.Produtos.Remove(produtos);
+        _context.SaveChanges();
+        return Result.Ok();
     }
 }

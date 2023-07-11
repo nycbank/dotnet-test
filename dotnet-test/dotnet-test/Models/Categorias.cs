@@ -7,4 +7,5 @@ public class Categorias
     [Key]
     public int id { get; set; }
     public string nome { get; set; }
+    public List<Produtos> Produtos { get; set; }
 }

@@ -3,6 +3,7 @@ using dotnet_test.Data;
 using dotnet_test.Data.Dtos.CategoriaDto;
 using dotnet_test.Data.Dtos.ProdutoDto;
 using dotnet_test.Models;
+using FluentResults;
 
 namespace dotnet_test.Services;
 
@@ -48,5 +49,25 @@ public class CategoriaService
         }
 
         return null;
+    }
+
+    public Result UpdateCategoria(UpdateCategoriaDto categoriaDto)
+    {
+        Categorias categorias = _context.Categorias.FirstOrDefault(p => p.id == categoriaDto.id);
+        if(categorias == null)
+            return Result.Fail("Not Found");
+        _mapper.Map(categoriaDto, categorias);
+        _context.SaveChanges();
+        return Result.Ok();
+    }
+
+    public Result DeleteCategoria(int id)
+    {
+        Categorias categorias = _context.Categorias.FirstOrDefault(p => p.id == id);
+        if(categorias == null)
+            return Result.Fail("Not Found");
+        _context.Categorias.Remove(categorias);
+        _context.SaveChanges();
+        return Result.Ok();
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zGgz1tkARsUD5RhlDgRGnUB8ItwZk3yXIoUvE7UIACogKEGs14WY/+lFz8euXzkUFw09OTp3x7eV5sSZ+TWwDQ==",
+  "dgSpecHash": "EslMSEueK4Chi1Fuw1S7sVy5CU7oEqX5OB4vO+ioxYUNsBpd4nDpw4wUvM3k58UnS/waKDMC+ZsVmtMPZykRPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\marcos.smeets\\Documents\\WorkSpace\\Teste\\dotnet-test\\dotnet-test\\dotnet-test\\dotnet-test.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\marcos.smeets\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\marcos.smeets\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\marcos.smeets\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\marcos.smeets\\.nuget\\packages\\fluentresults\\3.15.2\\fluentresults.3.15.2.nupkg.sha512",
     "C:\\Users\\marcos.smeets\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\marcos.smeets\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\marcos.smeets\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
