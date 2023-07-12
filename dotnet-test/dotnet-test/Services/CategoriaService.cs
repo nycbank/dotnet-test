@@ -36,8 +36,16 @@ public class CategoriaService
         if (categoriasList != null)
         {
             List<ReadCategoriaDto> readCategoriaDtos = _mapper.Map<List<ReadCategoriaDto>>(categoriasList);
-            return readCategoriaDtos;
-        }
+        
+            foreach (var categoria in readCategoriaDtos)
+            {
+                var produtosList = _context.Categorias.Where(p => p.id == categoria.id).SelectMany(p => p.Produtos)
+                    .ToList();
+                categoria.ProdutosList = produtosList;
+            }
+
+        return readCategoriaDtos;
+    }
 
         return null;
     }

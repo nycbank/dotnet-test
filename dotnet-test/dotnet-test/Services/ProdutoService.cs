@@ -37,6 +37,13 @@ public class ProdutoService
         if (produtos != null)
         {
             List<ReadProdutoDto> readProdutoDtos = _mapper.Map<List<ReadProdutoDto>>(produtos);
+
+            foreach (var produto in readProdutoDtos)
+            {
+                var categoriaList = _context.Produtos.Where(p => p.id == produto.id).SelectMany(p => p.Categorias)
+                    .ToList();
+                produto.Categorias = categoriaList;
+            }
             return readProdutoDtos;
         }
 
