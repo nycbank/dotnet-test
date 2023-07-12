@@ -1,4 +1,5 @@
 using dotnet_test.Data.Dtos.ProdutoDto;
+using dotnet_test.Models;
 using dotnet_test.Services;
 using FluentResults;
 using Microsoft.AspNetCore.Mvc;

@@ -9,9 +9,10 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Categorias>()
-            .HasMany(e => e.Produtos)
-            .WithMany(e => e.Categorias);
+        modelBuilder.Entity<Produtos>()
+            .HasMany(p => p.Categorias)
+            .WithMany(c => c.Produtos);
+
     }
 
     public DbSet<Produtos> Produtos { get; set; }

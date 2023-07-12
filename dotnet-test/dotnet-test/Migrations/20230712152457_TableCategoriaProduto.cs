@@ -5,7 +5,7 @@
 namespace dotnet_test.Migrations
 {
     /// <inheritdoc />
-    public partial class AdicinandoRelacaoEntreProdutoECategoria : Migration
+    public partial class TableCategoriaProduto : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

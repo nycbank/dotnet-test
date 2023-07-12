@@ -21,10 +21,13 @@ public class ProdutoService
     public ReadProdutoDto PostProduto(CreatProdutoDto produtoDto)
     {
         Produtos produtos = _mapper.Map<Produtos>(produtoDto);
+        var categorias = _context.Categorias.Where(c => c.id == produtoDto.categoriasId).FirstOrDefault();
+        produtos.Categorias.Add(categorias);
         _context.Produtos.Add(produtos);
         _context.SaveChanges();
         return _mapper.Map<ReadProdutoDto>(produtos);
     }
+    
 
     public List<ReadProdutoDto> GetProdutos()
     {
@@ -43,9 +46,15 @@ public class ProdutoService
     public ReadProdutoDto GetProdutoById(int id)
     {
         Produtos produtos = _context.Produtos.FirstOrDefault(p => p.id == id);
+        var categorias = _context.Produtos
+            .Where(p => p.id == id)
+            .SelectMany(p => p.Categorias)
+            .Take(20)
+            .ToList();
         if (produtos != null)
         {
             ReadProdutoDto result = _mapper.Map<ReadProdutoDto>(produtos);
+            result.Categorias = categorias;
             return result;
         }
 

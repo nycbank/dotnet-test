@@ -11,8 +11,8 @@ using dotnet_test.Data;
 namespace dotnet_test.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230711204209_AdicinandoRelacaoEntreProdutoECategoria")]
-    partial class AdicinandoRelacaoEntreProdutoECategoria
+    [Migration("20230712152457_TableCategoriaProduto")]
+    partial class TableCategoriaProduto
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

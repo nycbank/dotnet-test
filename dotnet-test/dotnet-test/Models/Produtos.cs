@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace dotnet_test.Models;
 
@@ -8,5 +9,11 @@ public class Produtos
     public int id { get; set; }
     public string nome { get; set; }
     public decimal preco { get; set; }
-    public List<Categorias> Categorias { get; set; }
+    [JsonIgnore]
+    public virtual ICollection<Categorias> Categorias { get; set; }
+
+    public Produtos()
+    {
+        Categorias = new List<Categorias>();
+    }
 }

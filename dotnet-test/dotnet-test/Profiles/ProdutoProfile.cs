@@ -10,6 +10,10 @@ public class ProdutoProfile : Profile
     {
         CreateMap<CreatProdutoDto, Produtos>();
         CreateMap<UpdateProdutoDto, Produtos>();
-        CreateMap<Produtos, ReadProdutoDto>();
+        CreateMap<Produtos, ReadProdutoDto>()
+            .ForMember(c => c.Categorias,
+                opts => opts.MapFrom(t => t.Categorias.Select(c => new { c.id, c.nome })))
+            .ForMember(dest => dest.Categorias, opt => opt.MapFrom(src => src.Categorias))
+            .ReverseMap();
     }
 }
