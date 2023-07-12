@@ -9,7 +9,8 @@ namespace dotnet_test.Controllers;
 
 [Route("[controller]")]
 [ApiController]
-[Authorize("Bearer")]
+[Produces("application/json")]
+[Authorize]
 public class ProdutoController : ControllerBase
 {
     private readonly ProdutoService _produtoService;

@@ -8,7 +8,8 @@ namespace dotnet_test.Controllers;
 
 [Route("[controller]")]
 [ApiController]
-[Authorize("Bearer")]
+[Produces("application/json")]
+[Authorize]
 public class CategoriaController : ControllerBase
 {
     private readonly CategoriaService _categoriaService;
