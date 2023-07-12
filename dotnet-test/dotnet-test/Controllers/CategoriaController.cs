@@ -1,12 +1,14 @@
 using dotnet_test.Data.Dtos.CategoriaDto;
 using dotnet_test.Services;
 using FluentResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_test.Controllers;
 
 [Route("[controller]")]
 [ApiController]
+[Authorize("Bearer")]
 public class CategoriaController : ControllerBase
 {
     private readonly CategoriaService _categoriaService;
@@ -24,6 +26,7 @@ public class CategoriaController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public IActionResult GetCategoriaById(int id)
     {
         ReadCategoriaDto readCategoriaDto = _categoriaService.GetCategoriaById(id);
@@ -33,6 +36,7 @@ public class CategoriaController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public IActionResult GetCategoria()
     {
         List<ReadCategoriaDto> readCategoriaDtos = _categoriaService.GetCategorias();

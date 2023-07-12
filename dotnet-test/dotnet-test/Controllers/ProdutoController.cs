@@ -2,12 +2,14 @@ using dotnet_test.Data.Dtos.ProdutoDto;
 using dotnet_test.Models;
 using dotnet_test.Services;
 using FluentResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_test.Controllers;
 
 [Route("[controller]")]
 [ApiController]
+[Authorize("Bearer")]
 public class ProdutoController : ControllerBase
 {
     private readonly ProdutoService _produtoService;
@@ -25,6 +27,7 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public IActionResult GetProdutoById(int id)
     {
         ReadProdutoDto readProdutoDto = _produtoService.GetProdutoById(id);
@@ -34,6 +37,7 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public IActionResult GetProduto()
     {
         List<ReadProdutoDto> readProdutoDtos = _produtoService.GetProdutos();
