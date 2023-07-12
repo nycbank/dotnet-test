@@ -4,6 +4,7 @@ using dotnet_test.Data.Dtos.CategoriaDto;
 using dotnet_test.Data.Dtos.ProdutoDto;
 using dotnet_test.Models;
 using FluentResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_test.Services;
 
@@ -69,6 +70,11 @@ public class ProdutoService
             return Result.Fail("Not Found");
         }
 
+        var verificaCategoria = ProdutoContemCategoria(produtoDto.id, produtoDto.categoriasId);
+        if (verificaCategoria == true)
+        {
+            return Result.Fail("Categoria já cadastrada");
+        }
         _mapper.Map(produtoDto, produtos);
         _context.SaveChanges();
         return Result.Ok();
@@ -83,4 +89,21 @@ public class ProdutoService
         _context.SaveChanges();
         return Result.Ok();
     }
+    
+    public bool ProdutoContemCategoria(int produtoId, int categoriaId)
+    {
+        var produto = _context.Produtos
+            .Include(p => p.Categorias)
+            .FirstOrDefault(p => p.id == produtoId);
+
+        var categoria = produto.Categorias.FirstOrDefault(c => c.id == categoriaId);
+
+        if (categoria == null)
+        {
+            return false;
+        }
+        
+        return true;
+    }
+
 }
