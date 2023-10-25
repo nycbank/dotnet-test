@@ -13,6 +13,9 @@ Bem vindo à API de listagem de produtos para o Dotnet-Test NYC Bank. Projetada 
 ## Documentação:
 Toda documentação de utilização foi desenvolvida utilizando o Swagger com atualizações pontuais e pode ser consultada em: **ainda em desenvolvimento**
 
+## Backlog:
+O backlog de desenvolvimento pode ser acompanhado pelo Trello em: https://trello.com/b/dqxBe0fg/nyc-bank-dotnet-test
+
 ## Atenção:
 Essa API foi desenvolvida por André Toti para o NYC Bank.
 
