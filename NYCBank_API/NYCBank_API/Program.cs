@@ -6,6 +6,9 @@ var connectionString = builder.Configuration.GetConnectionString("ProductsConnec
 
 builder.Services.AddDbContext<ProdutoContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
+// Add Automapper to the application
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.
 

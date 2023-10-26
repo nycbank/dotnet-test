@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3tkUr/J/iID3l449U8b7uLT8eJeBKnQeYcHPCOEhcChsQhzOAIKEr9+osnlrh/2CJeE7rVx1A8jS4loLJ7B2EA==",
+  "dgSpecHash": "xzxqdk3yPje9Mis3ZU2yq5wPtqAmtdtx7U9R4cMax7UdPSwx2BqrIxkSBIRXWXlJmj2gljvd+1FdiFKg/jGiNQ==",
   "success": true,
   "projectFilePath": "/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/NYCBank_API.csproj",
   "expectedPackageFiles": [
+    "/Users/andretoti/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
+    "/Users/andretoti/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/andretoti/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/microsoft.entityframeworkcore/6.0.24/microsoft.entityframeworkcore.6.0.24.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.24/microsoft.entityframeworkcore.abstractions.6.0.24.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.24/microsoft.entityframeworkcore.analyzers.6.0.24.nupkg.sha512",
@@ -30,8 +33,7 @@
     "/Users/andretoti/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
-    "/Users/andretoti/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/Users/andretoti/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
+    "/Users/andretoti/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

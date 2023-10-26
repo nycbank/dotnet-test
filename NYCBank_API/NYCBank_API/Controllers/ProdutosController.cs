@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 using NYCBank_API.Models;
 using NYCBank_API.Data;
+using NYCBank_API.Data.DTOs;
 
 namespace NYCBank_API.Controllers;
 
@@ -11,16 +13,19 @@ namespace NYCBank_API.Controllers;
 public class ProdutosController : ControllerBase
 {
 	private ProdutoContext _context;
+	private IMapper _mapper;
 
-	public ProdutosController(ProdutoContext context)
+	public ProdutosController(ProdutoContext context, IMapper mapper)
 	{
 		_context = context;
+		_mapper = mapper;
 	}
 
 
 	[HttpPost]
-	public IActionResult PostProduto([FromBody] Produto produto)
+	public IActionResult PostProduto([FromBody] CreateProdutoDTO produtoDTO)
 	{
+		Produto produto = _mapper.Map<Produto>(produtoDTO);
 		_context.Produtos.Add(produto);
 		_context.SaveChanges();
 		return CreatedAtAction(nameof(GetProdutoByID),
