@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NYCBank_API</name>
+    </assembly>
+    <members>
+        <member name="M:NYCBank_API.Controllers.ProdutosController.PostProduto(NYCBank_API.Data.DTOs.CreateProdutoDTO)">
+            <summary>
+            Adiciona um PRODUTO ao banco de dados
+            </summary>
+            <param name="produtoDTO">Objeto parametros para criação do PRODUTO</param>
+            <returns>IActionResult</returns>
+            <response code="201">Se a inserção for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.ProdutosController.GetProdutos(System.Int32,System.Int32)">
+            <summary>
+            Recebe os PRODUTOS do banco de dados
+            </summary>
+            <returns>IEnumerable</returns>
+            <response code="200">Se a resposta do BD for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.ProdutosController.GetProdutoByID(System.Int32)">
+            <summary>
+            Recebe o PRODUTO do banco de dados baseado no ID
+            </summary>
+            <returns>IActionResult</returns>
+            <response code="200">Se a resposta do BD for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.ProdutosController.PutProduto(System.Int32,NYCBank_API.Data.DTOs.UpdateProdutoDTO)">
+            <summary>
+            Edita os campos de um PRODUTO do banco de dados baseado no ID
+            </summary>
+            <returns>IActionResult</returns>
+            <response code="201">Se edição no BD for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.ProdutosController.PatchProduto(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{NYCBank_API.Data.DTOs.UpdateProdutoDTO})">
+            <summary>
+            Edita um campo especifico de um PRODUTO do banco de dados baseado no ID e campo informado pelo usuário.
+            </summary>
+            <returns>IActionResult</returns>
+            <response code="201">Se edição no BD for feita corretamente.</response>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:NYCBank_API.Controllers.ProdutosController.DeleteProduto(System.Int32)" -->
+    </members>
+</doc>

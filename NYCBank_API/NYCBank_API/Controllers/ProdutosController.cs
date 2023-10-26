@@ -23,8 +23,13 @@ public class ProdutosController : ControllerBase
 		_mapper = mapper;
 	}
 
-
-	[HttpPost]
+    /// <summary>
+    /// Adiciona um PRODUTO ao banco de dados
+    /// </summary>
+    /// <param name="produtoDTO">Objeto parametros para criação do PRODUTO</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Se a inserção for feita corretamente.</response>
+	    [HttpPost]
 	public IActionResult PostProduto([FromBody] CreateProdutoDTO produtoDTO)
 	{
 		Produto produto = _mapper.Map<Produto>(produtoDTO);
@@ -34,14 +39,24 @@ public class ProdutosController : ControllerBase
 			new { id = produto.Id }, produto);
 	}
 
-	[HttpGet]
+    /// <summary>
+    /// Recebe os PRODUTOS do banco de dados
+    /// </summary>
+    /// <returns>IEnumerable</returns>
+    /// <response code="200">Se a resposta do BD for feita corretamente.</response>
+    [HttpGet]
 	public IEnumerable<ReadProdutoDTO> GetProdutos(
 		[FromQuery]int skip = 0, int take = 50)
 	{
 		return _mapper.Map<List<ReadProdutoDTO>>(_context.Produtos.Skip(skip).Take(take));
 	}
 
-	[HttpGet("{id}")]
+    /// <summary>
+    /// Recebe o PRODUTO do banco de dados baseado no ID
+    /// </summary>
+    /// <returns>IActionResult</returns>
+    /// <response code="200">Se a resposta do BD for feita corretamente.</response>
+    [HttpGet("{id}")]
 	public IActionResult GetProdutoByID(int id)
 	{
 		var produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
@@ -50,7 +65,12 @@ public class ProdutosController : ControllerBase
         return Ok(produtoDTO);
 	}
 
-	[HttpPut("{id}")]
+    /// <summary>
+    /// Edita os campos de um PRODUTO do banco de dados baseado no ID
+    /// </summary>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Se edição no BD for feita corretamente.</response>
+    [HttpPut("{id}")]
 	public IActionResult PutProduto(int id,
 		[FromBody] UpdateProdutoDTO produtoDTO)
 	{
@@ -62,7 +82,12 @@ public class ProdutosController : ControllerBase
 		return NoContent();
 	}
 
-	[HttpPatch]
+    /// <summary>
+    /// Edita um campo especifico de um PRODUTO do banco de dados baseado no ID e campo informado pelo usuário.
+    /// </summary>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Se edição no BD for feita corretamente.</response>
+    [HttpPatch]
     public IActionResult PatchProduto(int id, JsonPatchDocument<UpdateProdutoDTO> patch)
     {
         var produto = _context.Produtos.FirstOrDefault(
@@ -81,7 +106,11 @@ public class ProdutosController : ControllerBase
         return NoContent();
     }
 
-	[HttpDelete("{id}")]
+    /// <summary>
+    /// Remove um PRODUTO do banco de dados baseado no ID
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Se a deleção no BD for feita corretamente.</response>
+    [HttpDelete("{id}")]
 	public IActionResult DeleteProduto(int id)
 	{
         var produto = _context.Produtos.FirstOrDefault(
