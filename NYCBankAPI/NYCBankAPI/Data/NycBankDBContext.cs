@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NYCBankAPI.Data.Map;
 using NYCBankAPI.Models;
 
 namespace NYCBankAPI.Data;
@@ -15,6 +16,9 @@ public class NycBankDBContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfiguration(new ProductMap());
+        modelBuilder.ApplyConfiguration(new CategoryMap());
+
         base.OnModelCreating(modelBuilder);
     }
 

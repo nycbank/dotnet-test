@@ -1,8 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using NYCBankAPI.Data;
+using NYCBankAPI.Repository;
+using NYCBankAPI.Repository.Interfaces;
+using System.Text.Json.Serialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddEntityFrameworkSqlServer()
+                .AddDbContext<NycBankDBContext>
+                (
+                    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
+                );
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
