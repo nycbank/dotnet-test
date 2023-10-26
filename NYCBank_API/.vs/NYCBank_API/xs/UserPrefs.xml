@@ -1,33 +1,27 @@
 ﻿<Properties StartupConfiguration="{5C124F48-145D-467F-9EF8-B97DC78FD39F}|Default">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.NYCBank__API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NYCBank_API/Data/ProdutoContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NYCBank_API/Models/Produto.cs">
     <Files>
-      <File FileName="NYCBank_API/Data/ProdutoContext.cs" Line="11" Column="2" />
+      <File FileName="NYCBank_API/Models/Produto.cs" Line="24" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="NYCBank_API">
+          <Node name="NYCBank_API" expanded="True">
             <Node name="NYCBank_API">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Produto.cs" selected="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True">
-                <Node name="ProdutoContext.cs" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -4,7 +4,6 @@
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/NYCBank_API.deps.json
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/NYCBank_API.runtimeconfig.json
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/NYCBank_API.dll
-/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/ref/NYCBank_API.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/NYCBank_API.pdb
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Microsoft.OpenApi.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
@@ -25,3 +24,19 @@
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/ref/NYCBank_API.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/NYCBank_API.pdb
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/NYCBank_API.genruntimeconfig.cache
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Humanizer.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/MySqlConnector.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/staticwebassets/msbuild.NYCBank_API.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/staticwebassets/msbuild.build.NYCBank_API.props
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.NYCBank_API.props
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.NYCBank_API.props
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/refint/NYCBank_API.dll
