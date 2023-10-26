@@ -25,14 +25,14 @@ public class ProductController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductModel>> GetProductsById(int id)
     {
-        ProductModel products = await _productRepository.GetProductById(id);
-        return Ok(products);
+        ProductModel product = await _productRepository.GetProductById(id);
+        return Ok(product);
     }
 
     [HttpPost]
     public async Task<ActionResult<ProductModel>> AddProduct([FromBody] ProductModel productModel)
     {
-        ProductModel product = await _productRepository.AddProducts(productModel);
+        ProductModel product = await _productRepository.AddProduct(productModel);
         return Ok(product);
     }
 
@@ -40,7 +40,7 @@ public class ProductController : ControllerBase
     public async Task<ActionResult<ProductModel>> UpdateProduct([FromBody] ProductModel productModel, int id)
     {
         productModel.ProductId = id;
-        ProductModel product = await _productRepository.UpdateProducts(productModel, id);
+        ProductModel product = await _productRepository.UpdateProduct(productModel, id);
         return Ok(product);
     }
 

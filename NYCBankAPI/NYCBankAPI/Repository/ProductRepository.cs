@@ -24,14 +24,14 @@ public class ProductRepository : IProductRepository
         return await _dbContext.Products.FirstOrDefaultAsync(x => x.ProductId == id);
     }
 
-    public async Task<ProductModel> AddProducts(ProductModel product)
+    public async Task<ProductModel> AddProduct(ProductModel product)
     {
         await _dbContext.Products.AddAsync(product);
         await _dbContext.SaveChangesAsync();
 
         return product;
     }
-    public async Task<ProductModel> UpdateProducts(ProductModel product, int id)
+    public async Task<ProductModel> UpdateProduct(ProductModel product, int id)
     {
         var productById = await GetProductById(id);
 
