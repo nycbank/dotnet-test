@@ -6,41 +6,40 @@ using NYCBank_API.Data;
 
 #nullable disable
 
-namespace NYCBank_API.Migrations
+namespace NYCBank_API.Migrations;
+
+[DbContext(typeof(ProdutoContext))]
+partial class ProdutoContextModelSnapshot : ModelSnapshot
 {
-    [DbContext(typeof(ProdutoContext))]
-    partial class ProdutoContextModelSnapshot : ModelSnapshot
+    protected override void BuildModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.24")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+        modelBuilder
+            .HasAnnotation("ProductVersion", "6.0.24")
+            .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("NYCBank_API.Models.Produto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+        modelBuilder.Entity("NYCBank_API.Models.Produto", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    b.Property<string>("Categoria")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                b.Property<string>("Categoria")
+                    .IsRequired()
+                    .HasColumnType("longtext");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                b.Property<string>("Nome")
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnType("varchar(50)");
 
-                    b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(65,30)");
+                b.Property<decimal>("Preco")
+                    .HasColumnType("decimal(65,30)");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Produtos");
-                });
+                b.ToTable("Produtos");
+            });
 #pragma warning restore 612, 618
-        }
     }
 }

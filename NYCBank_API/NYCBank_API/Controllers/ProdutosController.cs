@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using NYCBank_API.Models;
+using NYCBank_API.Data;
 
 namespace NYCBank_API.Controllers;
 
@@ -9,14 +10,19 @@ namespace NYCBank_API.Controllers;
 
 public class ProdutosController : ControllerBase
 {
-	private static List<Produto> produtos = new List<Produto>();
-	private static int id = 0;
+	private ProdutoContext _context;
+
+	public ProdutosController(ProdutoContext context)
+	{
+		_context = context;
+	}
+
 
 	[HttpPost]
 	public IActionResult PostProduto([FromBody] Produto produto)
 	{
-		produto.Id = id++;
-		produtos.Add(produto);
+		_context.Produtos.Add(produto);
+		_context.SaveChanges();
 		return CreatedAtAction(nameof(GetProdutoByID),
 			new { id = produto.Id }, produto);
 	}
@@ -25,13 +31,13 @@ public class ProdutosController : ControllerBase
 	public IEnumerable<Produto> GetProdutos(
 		[FromQuery]int skip = 0, int take = 50)
 	{
-		return produtos.Skip(skip).Take(take);
+		return _context.Produtos.Skip(skip).Take(take);
 	}
 
 	[HttpGet("{id}")]
 	public IActionResult GetProdutoByID(int id)
 	{
-		var produto = produtos.FirstOrDefault(produto => produto.Id == id);
+		var produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
 		if (produto == null) return NotFound();
         return Ok();
 	}
