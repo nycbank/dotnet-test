@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "XnOfVSLRgVMkhPmq31t2l2yjx4OFeJ0P2zEPLU0iUbA=",
+  "Source": "NYCBank_API",
+  "BasePath": "_content/NYCBank_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
