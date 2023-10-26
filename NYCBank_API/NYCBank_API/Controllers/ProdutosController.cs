@@ -35,10 +35,10 @@ public class ProdutosController : ControllerBase
 	}
 
 	[HttpGet]
-	public IEnumerable<Produto> GetProdutos(
+	public IEnumerable<ReadProdutoDTO> GetProdutos(
 		[FromQuery]int skip = 0, int take = 50)
 	{
-		return _context.Produtos.Skip(skip).Take(take);
+		return _mapper.Map<List<ReadProdutoDTO>>(_context.Produtos.Skip(skip).Take(take));
 	}
 
 	[HttpGet("{id}")]
@@ -46,7 +46,8 @@ public class ProdutosController : ControllerBase
 	{
 		var produto = _context.Produtos.FirstOrDefault(produto => produto.Id == id);
 		if (produto == null) return NotFound();
-        return Ok();
+		var produtoDTO = _mapper.Map < ReadProdutoDTO>(produto);
+        return Ok(produtoDTO);
 	}
 
 	[HttpPut("{id}")]
