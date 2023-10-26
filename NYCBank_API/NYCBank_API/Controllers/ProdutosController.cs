@@ -1,9 +1,11 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.JsonPatch;
 using AutoMapper;
 using NYCBank_API.Models;
 using NYCBank_API.Data;
 using NYCBank_API.Data.DTOs;
+
 
 namespace NYCBank_API.Controllers;
 
@@ -48,7 +50,7 @@ public class ProdutosController : ControllerBase
 	}
 
 	[HttpPut("{id}")]
-	public IActionResult UpdateProduto(int id,
+	public IActionResult PutProduto(int id,
 		[FromBody] UpdateProdutoDTO produtoDTO)
 	{
 		var produto = _context.Produtos.FirstOrDefault(
@@ -58,6 +60,25 @@ public class ProdutosController : ControllerBase
 		_context.SaveChanges();
 		return NoContent();
 	}
+
+	[HttpPatch]
+    public IActionResult PatchProduto(int id, JsonPatchDocument<UpdateProdutoDTO> patch)
+    {
+        var produto = _context.Produtos.FirstOrDefault(
+            produto => produto.Id == id);
+        if (produto == null) return NotFound();
+
+		var produtoPatch = _mapper.Map<UpdateProdutoDTO>(produto);
+		patch.ApplyTo(produtoPatch, ModelState);
+
+		if(!TryValidateModel(produtoPatch))
+		{
+			return ValidationProblem(ModelState);
+		}
+		_mapper.Map(produtoPatch, produto);
+        _context.SaveChanges();
+        return NoContent();
+    }
 
 }
 
