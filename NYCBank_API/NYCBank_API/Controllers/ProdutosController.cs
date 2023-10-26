@@ -12,9 +12,16 @@ public class ProdutosController : ControllerBase
 	private static List<Produto> produtos = new List<Produto>();
 
 	[HttpPost]
-	public void AdicionaProduto([FromBody] Produto produto)
+	public void PostProduto([FromBody] Produto produto)
 	{
             produtos.Add(produto);
 	}
+
+	[HttpGet]
+	public IEnumerable<Produto> GetProdutos()
+	{
+		return produtos;
+	}
+
 }
 
