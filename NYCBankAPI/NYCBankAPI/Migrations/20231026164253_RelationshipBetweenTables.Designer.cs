@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NYCBankAPI.Data;
 
@@ -10,9 +11,10 @@ using NYCBankAPI.Data;
 namespace NYCBankAPI.Migrations
 {
     [DbContext(typeof(NycBankDBContext))]
-    partial class NycBankDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231026164253_RelationshipBetweenTables")]
+    partial class RelationshipBetweenTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

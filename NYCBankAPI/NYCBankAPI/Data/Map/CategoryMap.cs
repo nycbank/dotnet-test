@@ -11,6 +11,5 @@ public class CategoryMap : IEntityTypeConfiguration<CategoryModel>
         builder.HasKey(x => x.CategoryId);
         builder.Property(x => x.Name).IsRequired().HasMaxLength(255);
 
-        builder.HasMany(x => x.Products);
     }
 }

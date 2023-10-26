@@ -11,8 +11,6 @@ public class ProductMap : IEntityTypeConfiguration<ProductModel>
         builder.HasKey(x => x.ProductId);
         builder.Property(x => x.Name).IsRequired().HasMaxLength(255);
         builder.Property(x => x.Price).IsRequired();
-        builder.Property(x => x.CategoryId);
 
-        builder.HasMany(x => x.Categories);
     }
 }
