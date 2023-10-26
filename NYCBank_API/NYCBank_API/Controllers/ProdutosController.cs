@@ -13,10 +13,12 @@ public class ProdutosController : ControllerBase
 	private static int id = 0;
 
 	[HttpPost]
-	public void PostProduto([FromBody] Produto produto)
+	public IActionResult PostProduto([FromBody] Produto produto)
 	{
 		produto.Id = id++;
 		produtos.Add(produto);
+		return CreatedAtAction(nameof(GetProdutoByID),
+			new { id = produto.Id }, produto);
 	}
 
 	[HttpGet]
@@ -27,9 +29,11 @@ public class ProdutosController : ControllerBase
 	}
 
 	[HttpGet("{id}")]
-	public Produto? GetProdutoByID(int id)
+	public IActionResult GetProdutoByID(int id)
 	{
-		return produtos.FirstOrDefault(produto => produto.Id == id);
+		var produto = produtos.FirstOrDefault(produto => produto.Id == id);
+		if (produto == null) return NotFound();
+        return Ok();
 	}
 
 }
