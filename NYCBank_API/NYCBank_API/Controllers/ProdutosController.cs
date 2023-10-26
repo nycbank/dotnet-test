@@ -47,5 +47,17 @@ public class ProdutosController : ControllerBase
         return Ok();
 	}
 
+	[HttpPut("{id}")]
+	public IActionResult UpdateProduto(int id,
+		[FromBody] UpdateProdutoDTO produtoDTO)
+	{
+		var produto = _context.Produtos.FirstOrDefault(
+			produto => produto.Id == id);
+		if (produto == null) return NotFound();
+		_mapper.Map(produtoDTO, produto);
+		_context.SaveChanges();
+		return NoContent();
+	}
+
 }
 
