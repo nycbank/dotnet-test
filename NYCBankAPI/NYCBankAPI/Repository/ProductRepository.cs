@@ -9,9 +9,12 @@ public class ProductRepository : IProductRepository
 {
 
     private readonly NycBankDBContext _dbContext;
-    public ProductRepository(NycBankDBContext nycBankDBContext)
+    private readonly ICategoryRepository _categoryRepository;
+    private readonly ProductCategoryModel _productCategoryModel;
+    public ProductRepository(NycBankDBContext nycBankDBContext, ICategoryRepository categoryRepository)
     {
         _dbContext = nycBankDBContext;
+        _categoryRepository = categoryRepository;
     }
 
     public async Task<List<ProductModel>> GetAllProducts()
@@ -24,12 +27,30 @@ public class ProductRepository : IProductRepository
         return await _dbContext.Products.FirstOrDefaultAsync(x => x.ProductId == id);
     }
 
-    public async Task<ProductModel> AddProduct(ProductModel product)
+    public async Task<(ProductModel?, string)> AddProduct(ProductModel products)
     {
-        await _dbContext.Products.AddAsync(product);
+        var categories = await _categoryRepository.GetAllCategories();
+        await _dbContext.Products.AddAsync(products);
         await _dbContext.SaveChangesAsync();
 
-        return product;
+        foreach (var item in products.CategoryId)
+        {
+            var categoryId = await _categoryRepository.GetCategoryById(item);
+
+            if (categoryId is null)
+            {
+                return (null, "Category not found");
+            }
+
+            if (categories.Select(c=>c.CategoryId).Contains(item))
+            {
+                var productCategoryModel = new ProductCategoryModel() { ProductId = products.ProductId, CategoryId = item };
+                await _dbContext.ProductCategory.AddAsync(productCategoryModel);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
+        return (products, "");
     }
     public async Task<ProductModel> UpdateProduct(ProductModel product, int id)
     {

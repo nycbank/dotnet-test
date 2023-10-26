@@ -26,7 +26,8 @@ public class CategoryRepository : ICategoryRepository
 
     public async Task<CategoryModel> AddCategories(CategoryModel category)
     {
-        _dbContext.Categories.Add(category);
+        await _dbContext.Categories.AddAsync(category);
+        await _dbContext.SaveChangesAsync();
         return category;
     }
 

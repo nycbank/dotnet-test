@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -16,8 +17,7 @@ public class ProductModel
 
     public decimal Price { get; set; }
 
-
-    public int CategoryId { get; set; }
+    public List<int> CategoryId { get; set; } = new List<int> { 0 };
 
     [JsonIgnore]
     public ICollection<CategoryModel>? Categories { get; set; }

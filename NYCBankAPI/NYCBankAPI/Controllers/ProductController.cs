@@ -32,7 +32,12 @@ public class ProductController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ProductModel>> AddProduct([FromBody] ProductModel productModel)
     {
-        ProductModel product = await _productRepository.AddProduct(productModel);
+        (ProductModel product,string error) = await _productRepository.AddProduct(productModel);
+        if (!string.IsNullOrWhiteSpace(error))
+        {
+            return NotFound(error);
+        }
+
         return Ok(product);
     }
 

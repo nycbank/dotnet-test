@@ -12,6 +12,7 @@ public class NycBankDBContext : DbContext
 
     public DbSet<ProductModel> Products { get; set; }
     public DbSet<CategoryModel> Categories { get; set; }
+    public DbSet<ProductCategoryModel> ProductCategory { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

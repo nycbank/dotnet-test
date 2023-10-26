@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NYCBankAPI.Data;
 
@@ -10,9 +11,10 @@ using NYCBankAPI.Data;
 namespace NYCBankAPI.Migrations
 {
     [DbContext(typeof(NycBankDBContext))]
-    partial class NycBankDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231026171345_MappingModels")]
+    partial class MappingModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,6 +22,21 @@ namespace NYCBankAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("CategoryModelProductModel", b =>
+                {
+                    b.Property<int>("CategoriesCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductsProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CategoriesCategoryId", "ProductsProductId");
+
+                    b.HasIndex("ProductsProductId");
+
+                    b.ToTable("CategoryModelProductModel");
+                });
 
             modelBuilder.Entity("NYCBankAPI.Models.CategoryModel", b =>
                 {
@@ -39,21 +56,6 @@ namespace NYCBankAPI.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("NYCBankAPI.Models.ProductCategoryModel", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductId", "CategoryId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("ProductCategory", (string)null);
-                });
-
             modelBuilder.Entity("NYCBankAPI.Models.ProductModel", b =>
                 {
                     b.Property<int>("ProductId")
@@ -61,6 +63,9 @@ namespace NYCBankAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -75,23 +80,19 @@ namespace NYCBankAPI.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("NYCBankAPI.Models.ProductCategoryModel", b =>
+            modelBuilder.Entity("CategoryModelProductModel", b =>
                 {
-                    b.HasOne("NYCBankAPI.Models.CategoryModel", "Category")
+                    b.HasOne("NYCBankAPI.Models.CategoryModel", null)
                         .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("CategoriesCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NYCBankAPI.Models.ProductModel", "Product")
+                    b.HasOne("NYCBankAPI.Models.ProductModel", null)
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("ProductsProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }
