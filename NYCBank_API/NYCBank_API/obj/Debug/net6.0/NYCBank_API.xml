@@ -4,6 +4,51 @@
         <name>NYCBank_API</name>
     </assembly>
     <members>
+        <member name="M:NYCBank_API.Controllers.CategoriaController.PostCategoria(NYCBank_API.Data.DTOs.CreateCategoriaDTO)">
+            <summary>
+            Adiciona uma CATEGORIA ao banco de dados
+            </summary>
+            <param name="categoriaDTO">Objeto parametros para criação de CATEGORIA</param>
+            <returns>IActionResult</returns>
+            <response code="201">Se a inserção for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.CategoriaController.GetCategoria(System.Int32,System.Int32)">
+            <summary>
+            Recebe as CATEGORIAS do banco de dados
+            </summary>
+            <returns>IEnumerable</returns>
+            <response code="200">Se a resposta do BD for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.CategoriaController.GetCategoriaByID(System.Int32)">
+            <summary>
+            Recebe o PRODUTO do banco de dados baseado no ID
+            </summary>
+            <returns>IActionResult</returns>
+            <response code="200">Se a resposta do BD for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.CategoriaController.PatchCategoria(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{NYCBank_API.Data.DTOs.UpdateCategoriaDTO})">
+            <summary>
+            Edita um campo especifico de um PRODUTO do banco de dados baseado no ID e campo informado pelo usuário.
+            </summary>
+            <returns>IActionResult</returns>
+            <response code="201">Se edição no BD for feita corretamente.</response>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:NYCBank_API.Controllers.CategoriaController.DeleteCategoria(System.Int32)" -->
+        <member name="M:NYCBank_API.Controllers.ProdutoCategoriaController.PostProdutoCategoria(NYCBank_API.Data.DTOs.CreateProdutoCategoriaDTO)">
+            <summary>
+            Adiciona um PRODUTO E CATEGORIA ao banco de dados
+            </summary>
+            <param name="produtoCategoriaDTO">Objeto parametros para criação do PRODUTO E CATEGORIA</param>
+            <returns>IActionResult</returns>
+            <response code="201">Se a inserção for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.ProdutoCategoriaController.GetProdutoCategoriaById(System.Int32)">
+            <summary>
+            Recebe o PRODUTO COM CATEGORIA do banco de dados baseado no ID
+            </summary>
+            <returns>IActionResult</returns>
+            <response code="200">Se a resposta do BD for feita corretamente.</response>
+        </member>
         <member name="M:NYCBank_API.Controllers.ProdutosController.PostProduto(NYCBank_API.Data.DTOs.CreateProdutoDTO)">
             <summary>
             Adiciona um PRODUTO ao banco de dados

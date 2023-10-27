@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NYCBank_API.Data;
 
@@ -10,9 +11,10 @@ using NYCBank_API.Data;
 namespace NYCBank_API.Migrations
 {
     [DbContext(typeof(ProdutoContext))]
-    partial class ProdutoContextModelSnapshot : ModelSnapshot
+    [Migration("20231027205132_Produto-ProdutoCategoria-Categoria")]
+    partial class ProdutoProdutoCategoriaCategoria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,7 +34,7 @@ namespace NYCBank_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categorias", (string)null);
+                    b.ToTable("Categorias");
                 });
 
             modelBuilder.Entity("NYCBank_API.Models.Produto", b =>
@@ -54,7 +56,7 @@ namespace NYCBank_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Produtos", (string)null);
+                    b.ToTable("Produtos");
                 });
 
             modelBuilder.Entity("NYCBank_API.Models.ProdutoCategoria", b =>
@@ -72,7 +74,7 @@ namespace NYCBank_API.Migrations
 
                     b.HasIndex("CategoriaId");
 
-                    b.ToTable("ProdutoCategorias", (string)null);
+                    b.ToTable("ProdutoCategorias");
                 });
 
             modelBuilder.Entity("NYCBank_API.Models.ProdutoCategoria", b =>

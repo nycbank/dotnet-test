@@ -34,7 +34,6 @@
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/MySqlConnector.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
-/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/ref/NYCBank_API.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/NYCBank_API.xml
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/AutoMapper.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
@@ -43,3 +42,4 @@
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Newtonsoft.Json.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
 /Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/obj/Debug/net6.0/NYCBank_API.xml
+/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/bin/Debug/net6.0/ref/NYCBank_API.dll

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n56mmy6m14kh8OQjFy+yRgHpRpHdFE6Ey/sgC5tx/xux8CeVZxuW/IcTCOXpnXW4n2dP4mUQJcwH2ef62Aifmw==",
+  "dgSpecHash": "+9TEf8pJv3KFqO429JgJU6173egAusSJKK84T6fs+WHsgaEYhKjCyod+vYk+RoucxUjluxoRtTI2l+UI5huKJg==",
   "success": true,
   "projectFilePath": "/Users/andretoti/Desktop/Study/dotnet-test/NYCBank_API/NYCBank_API/NYCBank_API.csproj",
   "expectedPackageFiles": [
@@ -37,7 +37,8 @@
     "/Users/andretoti/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/andretoti/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
-    "/Users/andretoti/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "/Users/andretoti/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/andretoti/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
   ],
   "logs": []
 }

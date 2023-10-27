@@ -16,5 +16,8 @@ public class Produto
     [Range(0.01, 10000, ErrorMessage = "O preço deve ser maior que R$0.01 e menor que R$10.000")]
     public decimal Preco { get; set; }
 
+    public int? CategoriaId { get; set; }
+    public virtual ICollection<ProdutoCategoria> Categorias { get; set; }
+
 }
 
