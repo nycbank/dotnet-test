@@ -1,9 +1,9 @@
 # Projeto Processo Seletivo NYCBank - Crud de Produtos e Categorias
 
-O Projeto desenvolvido, é uma API RESTful, onde inicialmente foi constrúido o CRUD para produtos, e posteriormente para Categorias, utilizando EfCore e pacotes derivados deste, o banco foi construído com migrations, e os Testes Unitários com xunit, moq e o InMemoryDatabase também parte do EfCore.
-Para organização das tarefas criei um quadro no trello com cada passo tirado da descrição do desafio proposto, segue o link abaixo:
-https://trello.com/b/HdTQqQ7L/processo-seletivo-nyc-bank-restful-api-de-produtos
-Utilizei como guia de estilos esta documentação, para convenção de nomes, em métodos, variáveis e etc:
+O Projeto desenvolvido, é uma API RESTful, onde inicialmente foi constrúido o CRUD para produtos, e posteriormente para Categorias, utilizando EfCore e pacotes derivados deste, o banco foi construído com migrations, e os Testes Unitários com xunit, moq e o InMemoryDatabase também parte do EfCore.<br>
+Para organização das tarefas criei um quadro no trello com cada passo tirado da descrição do desafio proposto, segue o link abaixo:<br>
+https://trello.com/b/HdTQqQ7L/processo-seletivo-nyc-bank-restful-api-de-produtos<br>
+Utilizei como guia de estilos esta documentação, para convenção de nomes, em métodos, variáveis e etc:<br>
 https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
 
 ## Rodando o Projeto
