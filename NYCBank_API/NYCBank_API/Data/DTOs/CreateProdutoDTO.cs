@@ -14,7 +14,5 @@ public class CreateProdutoDTO
     [Range(0.01, 10000, ErrorMessage = "O preço deve ser maior que R$0.01 e menor que R$10.000")]
     public decimal Preco { get; set; }
 
-    [Required(ErrorMessage = "A categoria do produto é obrigatório.")]
-    public string Categoria { get; set; }
 }
 

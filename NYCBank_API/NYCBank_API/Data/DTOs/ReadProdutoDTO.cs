@@ -10,6 +10,5 @@ public class ReadProdutoDTO
 
     public decimal Preco { get; set; }
 
-    public string Categoria { get; set; }
 }
 
