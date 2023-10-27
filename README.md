@@ -19,38 +19,38 @@ https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identi
 * Após isso, poderá rodar o projeto normalmente e testar as funcionalidades com o Swagger ou algum outro programa de sua preferência
 
 ## Rotas
-###Produtos
-####Produtos[Get]
+### Produtos
+#### Produtos[Get]
 - Retorna todos os Produtos da Aplicação.
 
-####Produtos/{id}[Get]
+#### Produtos/{id}[Get]
 - Retorna o produto cujo o id é equivalente ao passado.
 
-####Produtos[Post]
+#### Produtos[Post]
 - Cria um novo produto
 - Recebe como parâmetros: nome, preco, e opcional categoria, caso a categoria passada não exista ela é criada na tabela de categorias ao enviar a requisição.
 
-####Produtos/{id}[Put]
+#### Produtos/{id}[Put]
 - Edita os dados do produto cujo o id é equivalente ao passado
 - Recebe como parâmetros: nome, preco, e opcional categoria, nesta requisição só é possível adicionar categorias existentes à lista.
 
-####Produtos/{id}[Delete]
+#### Produtos/{id}[Delete]
 - Exclui o produto cujo o id é equivalente ao passado.
 
-###Categorias
-####Categorias[Get]
+### Categorias
+#### Categorias[Get]
 - Retorna todos os Categorias da Aplicação.
 
-####Categorias/{id}[Get]
+#### Categorias/{id}[Get]
 - Retorna a categoria cujo o id é equivalente ao passado.
 
-####Categorias[Post]
+#### Categorias[Post]
 - Cria uma nova categoria
 - Recebe como parâmetro: nome;
   
-####Categorias/{id}[Put]
+#### Categorias/{id}[Put]
 - Edita os dados da categoria cujo o id é equivalente ao passado
 - Recebe como parâmetro: nome.
 
-####Categorias/{id}[Delete]
+#### Categorias/{id}[Delete]
 - Exclui a categoria cujo o id é equivalente ao passado.
