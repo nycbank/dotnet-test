@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\logonrmlocal\\Desktop\\Thais carvalho\\dotnet-test\\NycBank\\NycBank\\NycBank.csproj": {}
+    "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycBank\\NycBank\\NycBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\logonrmlocal\\Desktop\\Thais carvalho\\dotnet-test\\NycBank\\NycBank\\NycBank.csproj": {
+    "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycBank\\NycBank\\NycBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\logonrmlocal\\Desktop\\Thais carvalho\\dotnet-test\\NycBank\\NycBank\\NycBank.csproj",
+        "projectUniqueName": "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycBank\\NycBank\\NycBank.csproj",
         "projectName": "NycBank",
-        "projectPath": "C:\\Users\\logonrmlocal\\Desktop\\Thais carvalho\\dotnet-test\\NycBank\\NycBank\\NycBank.csproj",
-        "packagesPath": "C:\\Users\\logonrmlocal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\logonrmlocal\\Desktop\\Thais carvalho\\dotnet-test\\NycBank\\NycBank\\obj\\",
+        "projectPath": "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycBank\\NycBank\\NycBank.csproj",
+        "packagesPath": "C:\\Users\\thais\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycBank\\NycBank\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\logonrmlocal\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\thais\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
