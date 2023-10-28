@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/dotnet-test-solution/dotnet-test-solution.csproj",
-      "projectName": "dotnet-test-solution",
-      "projectPath": "/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/dotnet-test-solution/dotnet-test-solution.csproj",
+      "projectUniqueName": "/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Crud_API/Crud_API.csproj",
+      "projectName": "Crud_API",
+      "projectPath": "/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Crud_API/Crud_API.csproj",
       "packagesPath": "/Users/jonatasjoao/.nuget/packages/",
-      "outputPath": "/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/dotnet-test-solution/obj/",
+      "outputPath": "/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Crud_API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jonatasjoao/.nuget/NuGet/NuGet.Config"

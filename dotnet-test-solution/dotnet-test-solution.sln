@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-test-solution", "dotnet-test-solution\dotnet-test-solution.csproj", "{8E782843-C97E-49CE-B43E-0EF0F64A8004}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud_API", "Crud_API\Crud_API.csproj", "{8E782843-C97E-49CE-B43E-0EF0F64A8004}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
