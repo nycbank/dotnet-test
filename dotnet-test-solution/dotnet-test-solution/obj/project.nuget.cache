@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "htRXWMgkOSh9VcZwXU2mkBdt88/d+5m/MfT/fJkIpD9vJT6xB2A6SHvNwl39ZideSz8J8GSLo7FebUYotXhLeg==",
+  "success": true,
+  "projectFilePath": "/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/dotnet-test-solution/dotnet-test-solution.csproj",
+  "expectedPackageFiles": [
+    "/Users/jonatasjoao/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/jonatasjoao/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/jonatasjoao/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/jonatasjoao/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/jonatasjoao/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/jonatasjoao/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
