@@ -20,6 +20,23 @@ Dica: Utilize Migrations.
 
 # Etapas
 
+
+#	Trello:
+	https://trello.com/invite/b/XcWbIkMz/ATTI3bc56f140bced83c61c33f8fe213c2beDE3B7A91/nycbank
+	
+	Documentações utilizadas:
+	
+	Conventional Commits
+	
+	 Markdown Cheat Sheet | Markdown Guide
+	
+	ChatGPT (openai.com)
+	
+	Stack Overflow - Where Developers Learn, Share, & Build Careers
+	
+	Arquitetura:
+	https://online.visual-paradigm.com/
+=======
 #1 - Fazer um fork desse repositório
 
 # 2 - Criar um branch com o seu primeiro e último nome
@@ -64,6 +81,7 @@ Fraco relacionamento entre colunas nas tabelas (falta de Foreign Key e Constrain
 Falta de organização de código.
 Falta de documentação.
 Histórico de commits desorganizado e despadronizado.
+
 
 
 
