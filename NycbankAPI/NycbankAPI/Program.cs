@@ -4,7 +4,7 @@ using NycBank.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 var stringConexao = "User Id=rm95546;Password=170599;Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oracle.fiap.com.br)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ORCL)))";
 
 builder.Services.AddDbContext<BankContext>(options =>
@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
