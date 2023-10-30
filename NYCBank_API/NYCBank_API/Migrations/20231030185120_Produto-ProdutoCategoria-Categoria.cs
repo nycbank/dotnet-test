@@ -35,8 +35,7 @@ namespace NYCBank_API.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Preco = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
-                    CategoriaId = table.Column<int>(type: "int", nullable: true)
+                    Preco = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
                 },
                 constraints: table =>
                 {
