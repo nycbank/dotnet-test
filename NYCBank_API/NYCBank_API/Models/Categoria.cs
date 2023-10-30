@@ -12,7 +12,7 @@ public class Categoria
     [MaxLength(50, ErrorMessage = "O nome da categoria não pode exceder 50 caracteres")]
     public string Nome { get; set; }
 
-    public virtual ICollection<ProdutoCategoria> Produtos { get; set; }
+    public virtual ICollection<ProdutoCategoria> ProdutoCategorias { get; set; }
 
 }
 

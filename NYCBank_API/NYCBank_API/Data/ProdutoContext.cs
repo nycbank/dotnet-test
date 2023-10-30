@@ -18,12 +18,12 @@ namespace NYCBank_API.Data
 
             builder.Entity<ProdutoCategoria>()
                 .HasOne(produtoCategoria => produtoCategoria.Produto)
-                .WithMany(produto => produto.Categorias)
+                .WithMany(produto => produto.ProdutoCategorias)
                 .HasForeignKey(produtoCategoria => produtoCategoria.ProdutoId);
 
             builder.Entity<ProdutoCategoria>()
                 .HasOne(produtoCategoria => produtoCategoria.Categoria)
-                .WithMany(categoria => categoria.Produtos)
+                .WithMany(categoria => categoria.ProdutoCategorias)
                 .HasForeignKey(produtoCategoria => produtoCategoria.CategoriaId);
         }
 

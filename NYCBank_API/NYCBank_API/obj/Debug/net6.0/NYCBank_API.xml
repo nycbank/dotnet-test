@@ -43,10 +43,17 @@
             <response code="201">Se a inserção for feita corretamente.</response>
         </member>
         <member name="M:NYCBank_API.Controllers.ProdutoCategoriaController.GetProdutoCategoriaById(System.Int32)">
-            <summary>
+            <summary>   
             Recebe o PRODUTO COM CATEGORIA do banco de dados baseado no ID
             </summary>
             <returns>IActionResult</returns>
+            <response code="200">Se a resposta do BD for feita corretamente.</response>
+        </member>
+        <member name="M:NYCBank_API.Controllers.ProdutoCategoriaController.GetAllProdutoCategorias">
+            <summary>
+            Recebe as CATEGORIAS COM PRODUTOS do banco de dados
+            </summary>
+            <returns>IEnumerable</returns>
             <response code="200">Se a resposta do BD for feita corretamente.</response>
         </member>
         <member name="M:NYCBank_API.Controllers.ProdutosController.PostProduto(NYCBank_API.Data.DTOs.CreateProdutoDTO)">

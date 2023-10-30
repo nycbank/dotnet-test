@@ -7,7 +7,7 @@ using NYCBank_API.Data.DTOs;
 namespace NYCBank_API.Controllers
 {
     [ApiController]
-    [Route("controller")]
+    [Route("[controller]")]
     public class ProdutoCategoriaController : ControllerBase
     {
         private ProdutoContext _context;
