@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud_API", "Crud_API\Crud_API.csproj", "{8E782843-C97E-49CE-B43E-0EF0F64A8004}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{BEBCDD76-854F-40F6-B8E9-7449508ED73B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{7DC58A3C-E8D8-451C-99D6-9E57C3E131B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{8E782843-C97E-49CE-B43E-0EF0F64A8004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E782843-C97E-49CE-B43E-0EF0F64A8004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E782843-C97E-49CE-B43E-0EF0F64A8004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEBCDD76-854F-40F6-B8E9-7449508ED73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEBCDD76-854F-40F6-B8E9-7449508ED73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEBCDD76-854F-40F6-B8E9-7449508ED73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEBCDD76-854F-40F6-B8E9-7449508ED73B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC58A3C-E8D8-451C-99D6-9E57C3E131B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC58A3C-E8D8-451C-99D6-9E57C3E131B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC58A3C-E8D8-451C-99D6-9E57C3E131B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC58A3C-E8D8-451C-99D6-9E57C3E131B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
