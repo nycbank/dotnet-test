@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NycBank.Models;
+
+using NycbankAPI.Models;
 
 namespace NycBank.Data
 {

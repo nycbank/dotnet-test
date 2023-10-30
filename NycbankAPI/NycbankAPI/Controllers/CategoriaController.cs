@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NycBank.Data;
+using NycbankAPI.Data.Dto;
+using NycbankAPI.Models;
 
 namespace NycbankAPI.Controllers
 {

@@ -1,0 +1,7 @@
+C:\Users\thais\Desktop\dotnet-test\NycbankAPI\NycbankAPI\obj\Debug\net6.0\NycbankAPI.csproj.AssemblyReference.cache
+C:\Users\thais\Desktop\dotnet-test\NycbankAPI\NycbankAPI\obj\Debug\net6.0\NycbankAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thais\Desktop\dotnet-test\NycbankAPI\NycbankAPI\obj\Debug\net6.0\NycbankAPI.AssemblyInfoInputs.cache
+C:\Users\thais\Desktop\dotnet-test\NycbankAPI\NycbankAPI\obj\Debug\net6.0\NycbankAPI.AssemblyInfo.cs
+C:\Users\thais\Desktop\dotnet-test\NycbankAPI\NycbankAPI\obj\Debug\net6.0\NycbankAPI.csproj.CoreCompileInputs.cache
+C:\Users\thais\Desktop\dotnet-test\NycbankAPI\NycbankAPI\obj\Debug\net6.0\NycbankAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\thais\Desktop\dotnet-test\NycbankAPI\NycbankAPI\obj\Debug\net6.0\NycbankAPI.MvcApplicationPartsAssemblyInfo.cache

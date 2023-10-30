@@ -1,4 +1,6 @@
-﻿namespace NycbankAPI.Data.Dto
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace NycbankAPI.Data.Dto
 {
     public class CreateCategoriaDto
     {
