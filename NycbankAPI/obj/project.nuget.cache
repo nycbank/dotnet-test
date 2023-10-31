@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q46BtJxum49xKHW1crQt4TkKAozC3YYlOypaFED54z+CsYU4pbqBc1UuzO9TTPty5BBTe8zNRClkbLtrjaDSHA==",
+  "dgSpecHash": "Gkw5KR/nptF0gNrXsti5Bf/OafbyI4spnqKG2J8//COLHFyz549vXmRtt/FCcEzf3R7BjgETBMDInork+MokCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thais\\Desktop\\dotnet-test\\NycbankAPI\\NycbankAPI\\NycbankAPI.csproj",
+  "projectFilePath": "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycbankAPI\\NycbankAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thais\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\thais\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

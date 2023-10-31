@@ -14,6 +14,6 @@ namespace NycbankAPI.Models
         [Column]
         public string Nome { get; set; }
 
-        public List<Produtos> Produtos { get; set; }
+        public ICollection<CategoriaProduto> Produtos { get; set; }
     }
 }

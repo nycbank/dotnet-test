@@ -3199,11 +3199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thais\\Desktop\\dotnet-test\\NycbankAPI\\NycbankAPI\\NycbankAPI.csproj",
+      "projectUniqueName": "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycbankAPI\\NycbankAPI.csproj",
       "projectName": "NycbankAPI",
-      "projectPath": "C:\\Users\\thais\\Desktop\\dotnet-test\\NycbankAPI\\NycbankAPI\\NycbankAPI.csproj",
+      "projectPath": "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycbankAPI\\NycbankAPI.csproj",
       "packagesPath": "C:\\Users\\thais\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thais\\Desktop\\dotnet-test\\NycbankAPI\\NycbankAPI\\obj\\",
+      "outputPath": "C:\\Users\\thais\\Desktop\\dotnet-test-ThaisCarvalho\\NycbankAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thais\\AppData\\Roaming\\NuGet\\NuGet.Config",

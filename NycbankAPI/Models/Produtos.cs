@@ -15,10 +15,6 @@ namespace NycbankAPI.Models
         public string Nome { get; set; }
         [Column]
         public double Preco { get; set; }
-
-        public int CategoriaId { get; set; }
-
-
-        public Categoria Categoria { get; set; }
+        public ICollection<CategoriaProduto> Categorias { get; set; }
     }
 }
