@@ -22,10 +22,10 @@ namespace dotnet_test.Repositorios
         {
             return await _dbcontext.Produtos.ToListAsync();
         }
-        public async Task<Produto> Adicionar(Produto produto)
+        public Produto Adicionar(Produto produto)
         {
-            await _dbcontext.Produtos.AddAsync(produto);
-            await _dbcontext.SaveChangesAsync();
+             _dbcontext.Produtos.Add(produto);
+             _dbcontext.SaveChanges();
 
             return produto;
         }
@@ -35,11 +35,11 @@ namespace dotnet_test.Repositorios
 
             if(produtoPorId == null)
             {
-                throw new Exception("Não foi encontrado um uxuáriom para o ID: " + id + ".");
+                throw new Exception("Não foi encontrado um usuário para o ID: " + id + ".");
             }
             produtoPorId.Nome = produto.Nome;
             produtoPorId.Preco = produto.Preco;
-            produtoPorId.Categorias= produto.Categorias;
+            //produtoPorId.Categorias= produto.Categorias;
 
             _dbcontext.Produtos.Update(produtoPorId);
             await _dbcontext.SaveChangesAsync();
@@ -52,7 +52,7 @@ namespace dotnet_test.Repositorios
 
             if (produtoPorID == null)
             {
-                throw new Exception("Não foi encontrado um uxuáriom para o ID:" + id + ".");
+                throw new Exception("Não foi encontrado um usuário para o ID:" + id + ".");
             }
 
             _dbcontext.Produtos.Remove(produtoPorID);
