@@ -1,6 +1,7 @@
 ﻿using dotnet_test.Data;
 using dotnet_test.Models;
 using dotnet_test.Repositorios.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_test.Repositorios
@@ -29,6 +30,8 @@ namespace dotnet_test.Repositorios
 
             return produto;
         }
+
+       
         public async Task<Produto> Atualizar(Produto produto, int id)
         {
            Produto produtoPorId = await BuscarPorId(id);
@@ -39,7 +42,7 @@ namespace dotnet_test.Repositorios
             }
             produtoPorId.Nome = produto.Nome;
             produtoPorId.Preco = produto.Preco;
-            //produtoPorId.Categorias= produto.Categorias;
+           
 
             _dbcontext.Produtos.Update(produtoPorId);
             await _dbcontext.SaveChangesAsync();
