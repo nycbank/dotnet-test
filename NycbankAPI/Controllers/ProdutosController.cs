@@ -29,7 +29,7 @@ namespace NycbankAPI.Controllers
                     Preco = dto.Preco
                 };
 
-                await _context.CadastroProduto.AddAsync(produto);
+                await _context.Produtos.AddAsync(produto);
                 await _context.SaveChangesAsync();
 
                 return CreatedAtAction(nameof(RecuperaProdutoID), new { id = produto.ID }, produto);
@@ -42,7 +42,7 @@ namespace NycbankAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> RecuperaProdutoID(int id)
         {
-            var produto = await _context.CadastroProduto.FirstOrDefaultAsync(p => p.ID == id);
+            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.ID == id);
             if (produto == null)
                 return NotFound();
 
@@ -53,7 +53,7 @@ namespace NycbankAPI.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> AtualizaProduto(int id, [FromBody] UpdateProdutosDto dto)
         {
-            var produto = await _context.CadastroProduto.FirstOrDefaultAsync(p => p.ID == id);
+            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.ID == id);
 
             if (produto == null)
                 return NotFound();
@@ -69,12 +69,12 @@ namespace NycbankAPI.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> DeletaProduto(int id)
         {
-            var produto = await _context.CadastroProduto.FirstOrDefaultAsync(p => p.ID == id);
+            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.ID == id);
 
             if (produto == null)
                 return NotFound();
 
-            _context.CadastroProduto.Remove(produto);
+            _context.Produtos.Remove(produto);
             await _context.SaveChangesAsync();
 
             return NoContent();

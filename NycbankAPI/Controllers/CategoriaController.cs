@@ -28,7 +28,7 @@ namespace NycbankAPI.Controllers
                     Nome = dto.Nome
                 };
 
-                await _context.CadastroCategoria.AddAsync(categoria);
+                await _context.Categorias.AddAsync(categoria);
                 await _context.SaveChangesAsync();
 
                 return CreatedAtAction(nameof(RecuperaCategoriaID), new { id = categoria.Id }, categoria);
@@ -41,7 +41,7 @@ namespace NycbankAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> RecuperaCategoriaID(int id)
         {
-            var categoria = await _context.CadastroCategoria.FirstOrDefaultAsync(c => c.Id == id);
+            var categoria = await _context.Categorias.FirstOrDefaultAsync(c => c.Id == id);
             if (categoria == null)
                 return NotFound();
 
@@ -52,7 +52,7 @@ namespace NycbankAPI.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> AtualizaCategoria(int id, [FromBody] UpdateCategoriaDto dto)
         {
-            var categoria = await _context.CadastroCategoria.FirstOrDefaultAsync(c => c.Id == id);
+            var categoria = await _context.Categorias.FirstOrDefaultAsync(c => c.Id == id);
 
             if (categoria == null)
                 return NotFound();
@@ -67,12 +67,12 @@ namespace NycbankAPI.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> DeletaCategoria(int id)
         {
-            var categoria = await _context.CadastroCategoria.FirstOrDefaultAsync(c => c.Id == id);
+            var categoria = await _context.Categorias.FirstOrDefaultAsync(c => c.Id == id);
 
             if (categoria == null)
                 return NotFound();
 
-            _context.CadastroCategoria.Remove(categoria);
+            _context.Categorias.Remove(categoria);
             await _context.SaveChangesAsync();
 
             return NoContent();

@@ -9,7 +9,12 @@ var stringConexao = "User Id=rm95546;Password=170599;Data Source=(DESCRIPTION=(A
 
 builder.Services.AddDbContext<BankContext>(options =>
     options.UseOracle(stringConexao));
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddControllers();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
