@@ -7,7 +7,7 @@ using NycbankAPI.Models;
 namespace NycbankAPI.Controllers
 {
     [ApiController]
-    [Route("Produtos")] // Renomeado para usar o nome da classe em minúsculas
+    [Route("Produtos")] 
     public class ProdutosController : ControllerBase
     {
         private readonly BankContext _context;

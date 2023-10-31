@@ -21,18 +21,15 @@ namespace NycbankAPI.Controllers
         }
 
         [HttpPost]
-
+        [Route("oculto")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IActionResult> AdicionarCategoriaProduto(CreateCategoriaProdutosDto dto)
         {
-
-
             CategoriaProduto catproduto = _mapper.Map<CategoriaProduto>(dto);
             _context.CategoriasProdutos.Add(catproduto);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(RecuperaCategoriaProdutoID), new
             { Id = catproduto.Id }, catproduto);
-
-
         }
 
 
