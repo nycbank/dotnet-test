@@ -36,6 +36,8 @@ Dica: Utilize Migrations.
 	
 	Arquitetura:
 	https://online.visual-paradigm.com/
+
+ 	https://www.canva.com/design/DAFyysYyKRw/mLBxj41aHfVE1yxhTCM5pw/edit?utm_content=DAFyysYyKRw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 =======
 # Link Azure acesso API
 https://nyckbank.azurewebsites.net/swagger/index.html
