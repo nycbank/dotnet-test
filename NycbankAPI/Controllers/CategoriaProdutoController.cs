@@ -7,6 +7,8 @@ using NycbankAPI.Models;
 
 namespace NycbankAPI.Controllers
 {
+    [ApiController]
+    [Route("CategoriaProduto")]
     public class CategoriaProdutoController : ControllerBase
     {
         private readonly BankContext _context;
@@ -34,31 +36,33 @@ namespace NycbankAPI.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> RecuperaCategoriaProdutoID(int id)
+        public IEnumerable<ReadCategoriaProdutosDto> RecuperaCategoria()
         {
-            var produto = await _context.CategoriasProdutos.FirstOrDefaultAsync(p => p.ID == id);
-            if (produto == null)
-                return NotFound();
+          
 
-            return Ok(produto);
+            return _mapper.Map<List<ReadCategoriaProdutosDto>>(_context.CategoriasProdutos.ToList());
         }
 
-        [HttpPut("{id}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> AtualizaProduto(int id)
+        public async Task<IActionResult> RecuperaCategoriaProdutoID(int id)
         {
-            var produto = await _context.CategoriasProdutos.FirstOrDefaultAsync(p => p.ID == id);
 
-            if (produto == null)
-                return NotFound();
+            CategoriaProduto catproduto = _context.CategoriasProdutos.FirstOrDefault(catproduto => catproduto.Id == id);
 
-            produto.Nome = dto.Nome;
-            produto.Preco = dto.Preco;
-            await _context.SaveChangesAsync();
+            if(catproduto!= null)
+            {
 
-            return NoContent();
+                ReadCategoriaProdutosDto catprodutoDto = _mapper.Map<ReadCategoriaProdutosDto>(id);
+                return Ok(catprodutoDto);
+
+            }
+
+
+            return NotFound();
+
         }
     
         }

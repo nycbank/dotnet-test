@@ -144,3 +144,5 @@ C:\Users\thais\Desktop\dotnet-test-ThaisCarvalho\NycbankAPI\obj\Debug\net6.0\ref
 C:\Users\thais\Desktop\dotnet-test-ThaisCarvalho\NycbankAPI\obj\Debug\net6.0\NycbankAPI.pdb
 C:\Users\thais\Desktop\dotnet-test-ThaisCarvalho\NycbankAPI\obj\Debug\net6.0\NycbankAPI.genruntimeconfig.cache
 C:\Users\thais\Desktop\dotnet-test-ThaisCarvalho\NycbankAPI\obj\Debug\net6.0\ref\NycbankAPI.dll
+C:\Users\thais\Desktop\dotnet-test-ThaisCarvalho\NycbankAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\thais\Desktop\dotnet-test-ThaisCarvalho\NycbankAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
