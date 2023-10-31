@@ -4,7 +4,7 @@ O presente teste foi realizado entre os dias 30/10 e 31/10.
 
 ## Projeto
 
-A API CRUD foi desenvolvida no Visual Studio 2022, utilizando o Framework .Net 6.0.0. As tabelas e o diagrama Modelo Entidade Relacional foram configurados no SQL Server Management Studio para fins documentais. A estruturação de cada tabela ocorre por meio das instruções presentes no código.
+A API CRUD foi desenvolvida no Visual Studio 2022, utilizando os Frameworks Entity e .Net 6.0.0. As tabelas e o diagrama Modelo Entidade Relacional foram configurados no SQL Server Management Studio para fins documentais. A estruturação de cada tabela ocorre por meio das instruções presentes no código.
 
 O projeto apresenta uma versão única, elaborada de acordo com os fluxos requisitados no arquivo read.me inicial. A versão compreende todos os requisitos, com exceção das funções relacionadas ao vínculo de categoria ao produto.
 
