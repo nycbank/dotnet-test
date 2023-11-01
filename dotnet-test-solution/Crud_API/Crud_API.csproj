@@ -18,11 +18,31 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Repository\Repository.csproj" />
+      <ProjectReference Include="..\Service\Service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Controllers\WeatherForecastController.cs" />
+      <Compile Remove="WeatherForecast.cs" />
+      <Compile Remove="DTOs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="DTOs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="DTOs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DTOs\**" />
     </ItemGroup>
 
 </Project>
