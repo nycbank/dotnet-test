@@ -1,0 +1,15 @@
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/bin/Debug/net6.0/Service.deps.json
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/bin/Debug/net6.0/Service.dll
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/bin/Debug/net6.0/Service.pdb
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/bin/Debug/net6.0/Repository.dll
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/bin/Debug/net6.0/Repository.pdb
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.csproj.AssemblyReference.cache
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.AssemblyInfoInputs.cache
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.AssemblyInfo.cs
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.csproj.CoreCompileInputs.cache
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.csproj.CopyComplete
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.dll
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/refint/Service.dll
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/Service.pdb
+/Users/jonatasjoao/RiderProjects/dotnet-test/dotnet-test-solution/Service/obj/Debug/net6.0/ref/Service.dll
