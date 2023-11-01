@@ -2,16 +2,10 @@ namespace Repository.Models;
 
 public class Product
 {
-    public Product(int id,string name, double price)
+    public Product(string name, double price)
     {
-        Id = id;
         Name = name;
         Price = price;
-    }
-
-    public Product()
-    {
-        
     }
 
     public int Id { get; set; }
