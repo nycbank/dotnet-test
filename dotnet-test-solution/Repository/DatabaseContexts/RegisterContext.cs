@@ -5,11 +5,7 @@ namespace Repository.DatabaseContexts;
 
 public class RegisterContext : DbContext
 {
-    /*public RegisterContext(DbContextOptions<RegisterContext> options) : base(options)
-    {
-        
-    }
-    */
+   
     private static string connectionString = @"Server=127.0.0.1;Database=register;User Id=SA;Password=P@ssw0rd;TrustServerCertificate=True;";
     
     public DbSet<Product> Products { get; set; }
