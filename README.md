@@ -1,3 +1,9 @@
+# Vencedor
+https://github.com/Jonatas6199
+Parabéns!
+
+
+
 # NYCBANK
 
 Somos uma Fintech que atua em segmentos financeiros onde ainda não foram explorados pelas demais empresas. Por isso, gostamos de compor nossos times com profissionais multidisciplinares, que tenham alta capacidade de aprendizado, sejam detalhistas, resiliêntes, questionadores e curiosos. Você, como Dotnet Developer, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em arquiteturas RESTFul API, baseadas em Micros serviços ou WebApp sempre buscando a melhor composição de tecnologias para cada cenário.
